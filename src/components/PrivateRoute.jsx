@@ -1,10 +1,10 @@
-import React from 'react';
-import { Route, Navigate } from 'react-router-dom';
+import React from "react";
+import { Route, Navigate } from "react-router-dom";
 
-const PrivateRoute = ({ element, ...rest }) => {
-    const isAuthenticated = localStorage.getItem('isAuthenticated');
+const PrivateRoute = ({ element }) => {
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
 
-    return isAuthenticated ? element : <Navigate to="/login" />;
+  return isAuthenticated ? element : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;
