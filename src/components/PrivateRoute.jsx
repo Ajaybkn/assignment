@@ -1,8 +1,8 @@
 import React from "react";
-import { Route, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ element }) => {
-  const isAuthenticated = localStorage.getItem("isAuthenticated");
+  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
   return isAuthenticated ? element : <Navigate to="/login" />;
 };
